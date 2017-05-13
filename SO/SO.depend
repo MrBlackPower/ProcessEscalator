@@ -1,0 +1,34 @@
+# depslib dependency file v1.0
+1494702429 source:d:\users\lucas\documents\cb\so\lottery.c
+	"lottery.h"
+	<stdio.h>
+	<string.h>
+
+1494690313 d:\users\lucas\documents\cb\so\lottery.h
+	"sched.h"
+
+1494690313 d:\users\lucas\documents\cb\so\sched.h
+	"process.h"
+
+1494690313 d:\users\lucas\documents\cb\so\process.h
+	<stdlib.h>
+
+1494695790 source:d:\users\lucas\documents\cb\so\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	"process.h"
+	"sched.h"
+	"lottery.h"
+
+1494690313 source:d:\users\lucas\documents\cb\so\process.c
+	<stdlib.h>
+	<stdio.h>
+	"process.h"
+	"sched.h"
+
+1494690313 source:d:\users\lucas\documents\cb\so\sched.c
+	<stdio.h>
+	<string.h>
+	"sched.h"
+
