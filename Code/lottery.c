@@ -89,9 +89,13 @@ Process* lottSchedule(Process *plist) {
 int lottReleaseParams(Process *p) {
 	//...
 	int slot = processGetSchedSlot(p);
-
-	processSetSchedParams(p,NULL);
-	processSetSchedSlot(p,-1);
+	if(slot == slotLott){
+		LotterySchedParams *lsp = processGetSchedParams(p);
+		processSetSchedParams(p,NULL);
+		processSetSchedSlot(p,-1);
+		free(lsp);
+	}
+	
 	return slot;
 }
 
@@ -111,9 +115,6 @@ int lottTransferTickets(Process *src, Process *dst, int tickets) {
 
     srcLsp->num_tickets = srcLsp->num_tickets - tickets;
     dstLsp->num_tickets = dstLsp->num_tickets + tickets;
-
-    processSetSchedParams(src,srcLsp);
-    processSetSchedParams(dst,dstLsp);
 
     return tickets;
 }
